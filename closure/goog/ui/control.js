@@ -51,9 +51,9 @@ goog.require('goog.userAgent');
  * the following:
  *  <ul>
  *    <li>a {@link goog.events.KeyHandler}, to simplify keyboard handling,
- *    <li>a pluggable <em>renderer</em> framework, to simplify the creation of
+ *    <li>a pluggable renderer framework, to simplify the creation of
  *        simple controls without the need to subclass this class,
- *    <li>the notion of component <em>content</em>, like a text caption or DOM
+ *    <li>the notion of component content, like a text caption or DOM
  *        structure displayed in the component (e.g. a button label),
  *    <li>getter and setter for component content, as well as a getter and
  *        setter specifically for caption text (for convenience),

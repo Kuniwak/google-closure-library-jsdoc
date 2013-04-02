@@ -33,13 +33,13 @@ goog.require('goog.object');
 
 /**
  * Inherit from this class to give your object the ability to dispatch events.
- * Note that this class provides event <em>sending</em> behaviour, not event
+ * Note that this class provides event sending behaviour, not event
  * receiving behaviour: your object will be able to broadcast events, and other
  * objects will be able to listen for those events using goog.events.listen().
  *
- * <p>The name "EventTarget" reflects the fact that this class implements the
- * <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html">
- * EventTarget interface</a> as defined by W3C DOM 2/3, with a few differences:
+ * The name "EventTarget" reflects the fact that this class implements the
+ * {@link http://www.w3.org/TR/DOM-Level-2-Events/events.html} as 
+ * "EventTarget interface" as defined by W3C DOM 2/3, with a few differences:
  * <ul>
  * <li>Event objects do not have to implement the Event interface. An object
  *     is treated as an event object if it has a 'type' property.
@@ -47,13 +47,13 @@ goog.require('goog.object');
  *     object will be created with the 'type' set to the string value.
  * </ul>
  *
- * <p>Unless propagation is stopped, an event dispatched by an EventTarget
- * will bubble to the parent returned by <code>getParentEventTarget</code>.
- * To set the parent, call <code>setParentEventTarget</code> or override
- * <code>getParentEventTarget</code> in a subclass.  Subclasses that don't
+ * Unless propagation is stopped, an event dispatched by an EventTarget
+ * will bubble to the parent returned by {@code getParentEventTarget}.
+ * To set the parent, call {@code setParentEventTarget} or override
+ * {@code getParentEventTarget} in a subclass.  Subclasses that don't
  * support changing the parent should override the setter to throw an error.
  *
- * <p>Example usage:
+ * Example usage:
  * <pre>
  *   var source = new goog.events.EventTarget();
  *   function handleEvent(event) {

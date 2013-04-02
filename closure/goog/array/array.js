@@ -298,9 +298,11 @@ goog.array.map = goog.NATIVE_ARRAY_PROTOTYPES &&
  * See {@link http://tinyurl.com/developer-mozilla-org-array-reduce}
  *
  * For example:
+ * <pre>
  * var a = [1, 2, 3, 4];
  * goog.array.reduce(a, function(r, v, i, arr) {return r + v;}, 0);
  * returns 10
+ * </pre>
  *
  * @param {Array.<T>|goog.array.ArrayLike} arr Array or array
  *     like object over which to iterate.
@@ -339,9 +341,11 @@ goog.array.reduce = function(arr, f, val, opt_obj) {
  * See {@link http://tinyurl.com/developer-mozilla-org-array-reduceright}
  *
  * For example:
+ * <pre>
  * var a = ['a', 'b', 'c'];
  * goog.array.reduceRight(a, function(r, v, i, arr) {return r + v;}, '');
  * returns 'cba'
+ * </pre>
  *
  * @param {Array.<T>|goog.array.ArrayLike} arr Array or array
  *     like object over which to iterate.
@@ -716,9 +720,11 @@ goog.array.removeIf = function(arr, f, opt_obj) {
  * Note that ArrayLike objects will be added as is, rather than having their
  * items added.
  *
- * goog.array.concat([1, 2], [3, 4]) -&gt; [1, 2, 3, 4]
- * goog.array.concat(0, [1, 2]) -&gt; [0, 1, 2]
- * goog.array.concat([1, 2], null) &gt; [1, 2, null]
+ * <pre>
+ * goog.array.concat([1, 2], [3, 4]) ⇒ [1, 2, 3, 4]
+ * goog.array.concat(0, [1, 2]) ⇒ [0, 1, 2]
+ * goog.array.concat([1, 2], null) ⇒ [1, 2, null]
+ * </pre>
  *
  * There is bug in all current versions of IE (6, 7 and 8) where arrays created
  * in an iframe become corrupted soon (not immediately) after the iframe is
@@ -726,7 +732,7 @@ goog.array.removeIf = function(arr, f, opt_obj) {
  * This corruption only affects the concat method which will start throwing
  * Catastrophic Errors (#-2147418113).
  *
- * See http://endoflow.com/scratch/corrupted-arrays.html for a test case.
+ * See {@link http://endoflow.com/scratch/corrupted-arrays.html} for a test case.
  *
  * Internally goog.array should use this, so that all methods will continue to
  * work on these broken array objects.
@@ -779,11 +785,13 @@ goog.array.clone = goog.array.toArray;
  * This function operates 'in-place', it does not create a new Array.
  *
  * Example:
+ * <pre>
  * var a = [];
  * goog.array.extend(a, [0, 1]);
  * a; // [0, 1]
  * goog.array.extend(a, 2);
  * a; // [0, 1, 2]
+ * </pre>
  *
  * @param {Array} arr1  The array to modify.
  * @param {...*} var_args The elements or arrays of elements to add to arr1.
@@ -909,7 +917,7 @@ goog.array.removeDuplicates = function(arr, opt_rv) {
 /**
  * Searches the specified array for the specified target using the binary
  * search algorithm.  If no opt_compareFn is specified, elements are compared
- * using <code>goog.array.defaultCompare</code>, which compares the elements
+ * using {@link goog.array.defaultCompare}, which compares the elements
  * using the built in &lt; and &gt; operators.  This will produce the expected
  * behavior for homogeneous arrays of String(s) and Number(s). The array
  * specified MUST be sorted in ascending order (as defined by the
@@ -1022,7 +1030,7 @@ goog.array.binarySearch_ = function(arr, compareFn, isEvaluator, opt_target,
 /**
  * Sorts the specified array into ascending order.  If no opt_compareFn is
  * specified, elements are compared using
- * <code>goog.array.defaultCompare</code>, which compares the elements using
+ * {@link goog.array.defaultCompare}, which compares the elements using
  * the built in &lt; and &gt; operators.  This will produce the expected behavior
  * for homogeneous arrays of String(s) and Number(s), unlike the native sort,
  * but will give unpredictable results for heterogenous lists of strings and
@@ -1030,7 +1038,7 @@ goog.array.binarySearch_ = function(arr, compareFn, isEvaluator, opt_target,
  *
  * This sort is not guaranteed to be stable.
  *
- * Runtime: Same as <code>Array.prototype.sort</code>
+ * Runtime: Same as {@code Array.prototype.sort}
  *
  * @param {Array.<T>} arr The array to be sorted.
  * @param {?function(T,T):number=} opt_compareFn Optional comparison
@@ -1052,11 +1060,11 @@ goog.array.sort = function(arr, opt_compareFn) {
 /**
  * Sorts the specified array into ascending order in a stable way.  If no
  * opt_compareFn is specified, elements are compared using
- * <code>goog.array.defaultCompare</code>, which compares the elements using
+ * {@link goog.array.defaultCompare}, which compares the elements using
  * the built in &lt; and &gt; operators.  This will produce the expected behavior
  * for homogeneous arrays of String(s) and Number(s).
  *
- * Runtime: Same as <code>Array.prototype.sort</code>, plus an additional
+ * Runtime: Same as {@code Array.prototype.sort}, plus an additional
  * O(n) overhead of copying the array twice.
  *
  * @param {Array.<T>} arr The array to be sorted.
@@ -1085,7 +1093,7 @@ goog.array.stableSort = function(arr, opt_compareFn) {
 /**
  * Sorts an array of objects by the specified object key and compare
  * function. If no compare function is provided, the key values are
- * compared in ascending order using <code>goog.array.defaultCompare</code>.
+ * compared in ascending order using {@link goog.array.defaultCompare}.
  * This won't work for keys that get renamed by the compiler. So use
  * {'foo': 1, 'bar': 2} rather than {foo: 1, bar: 2}.
  * @param {Array.<Object>} arr An array of objects to sort.
@@ -1401,8 +1409,9 @@ goog.array.flatten = function(var_args) {
  * array.length, for all values of i between 0 and array.length - 1,
  * inclusive.
  *
- * For example, suppose list comprises [t, a, n, k, s]. After invoking
- * rotate(array, 1) (or rotate(array, -4)), array will comprise [s, t, a, n, k].
+ * For example, suppose list comprises {@code [t, a, n, k, s]}. After invoking
+ * {@code rotate(array, 1)} (or {@code rotate(array, -4)}), array will comprise
+ * {@code [s, t, a, n, k]}.
  *
  * @param {!Array.<T>} array The array to rotate.
  * @param {number} n The amount to rotate.

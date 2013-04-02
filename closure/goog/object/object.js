@@ -234,7 +234,7 @@ goog.object.getKeys = function(obj) {
 /**
  * Get a value from an object multiple levels deep.  This is useful for
  * pulling values from deeply nested objects, such as JSON responses.
- * Example usage: getValueByKeys(jsonObj, 'foo', 'entries', 3)
+ * Example usage: {@code getValueByKeys(jsonObj, 'foo', 'entries', 3)}
  *
  * @param {!Object} obj An object to get the value from.  Can be array-like.
  * @param {...(string|number|!Array.<number|string>)} var_args A number of keys
@@ -458,11 +458,11 @@ goog.object.clone = function(obj) {
  * arrays will be cloned recursively.
  *
  * WARNINGS:
- * <code>goog.object.unsafeClone</code> does not detect reference loops. Objects
+ * {@link goog.object.unsafeClone} does not detect reference loops. Objects
  * that refer to themselves will cause infinite recursion.
  *
- * <code>goog.object.unsafeClone</code> is unaware of unique identifiers, and
- * copies UIDs created by <code>getUid</code> into cloned results.
+ * {@link goog.object.unsafeClone} is unaware of unique identifiers, and
+ * copies UIDs created by {@code getUid} into cloned results.
  *
  * @param {*} obj The value to clone.
  * @return {*} A clone of the input value.
@@ -522,11 +522,13 @@ goog.object.PROTOTYPE_FIELDS_ = [
  * This operates 'in-place'; it does not create a new Object.
  *
  * Example:
+ * <pre>
  * var o = {};
  * goog.object.extend(o, {a: 0, b: 1});
  * o; // {a: 0, b: 1}
  * goog.object.extend(o, {c: 2});
  * o; // {a: 0, b: 1, c: 2}
+ * </pre>
  *
  * @param {Object} target  The object to modify.
  * @param {...Object} var_args The objects from which values will be copied.
