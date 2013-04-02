@@ -716,9 +716,9 @@ goog.array.removeIf = function(arr, f, opt_obj) {
  * Note that ArrayLike objects will be added as is, rather than having their
  * items added.
  *
- * goog.array.concat([1, 2], [3, 4]) -> [1, 2, 3, 4]
- * goog.array.concat(0, [1, 2]) -> [0, 1, 2]
- * goog.array.concat([1, 2], null) -> [1, 2, null]
+ * goog.array.concat([1, 2], [3, 4]) -&gt; [1, 2, 3, 4]
+ * goog.array.concat(0, [1, 2]) -&gt; [0, 1, 2]
+ * goog.array.concat([1, 2], null) &gt; [1, 2, null]
  *
  * There is bug in all current versions of IE (6, 7 and 8) where arrays created
  * in an iframe become corrupted soon (not immediately) after the iframe is
@@ -910,9 +910,9 @@ goog.array.removeDuplicates = function(arr, opt_rv) {
  * Searches the specified array for the specified target using the binary
  * search algorithm.  If no opt_compareFn is specified, elements are compared
  * using <code>goog.array.defaultCompare</code>, which compares the elements
- * using the built in < and > operators.  This will produce the expected
+ * using the built in &lt; and &gt; operators.  This will produce the expected
  * behavior for homogeneous arrays of String(s) and Number(s). The array
- * specified <b>must</b> be sorted in ascending order (as defined by the
+ * specified MUST be sorted in ascending order (as defined by the
  * comparison function).  If the array is not sorted, results are undefined.
  * If the array contains multiple instances of the specified target value, any
  * of these instances may be found.
@@ -927,7 +927,7 @@ goog.array.removeDuplicates = function(arr, opt_rv) {
  *     first argument is less than, equal to, or greater than the second.
  * @return {number} Lowest index of the target value if found, otherwise
  *     (-(insertion point) - 1). The insertion point is where the value should
- *     be inserted into arr to preserve the sorted property.  Return value >= 0
+ *     be inserted into arr to preserve the sorted property.  Return value &gt;= 0
  *     iff target is found.
  */
 goog.array.binarySearch = function(arr, target, opt_compareFn) {
@@ -988,7 +988,7 @@ goog.array.binarySelect = function(arr, evaluator, opt_obj) {
   *    optional this object for the evaluator.
  * @return {number} Lowest index of the target value if found, otherwise
  *     (-(insertion point) - 1). The insertion point is where the value should
- *     be inserted into arr to preserve the sorted property.  Return value >= 0
+ *     be inserted into arr to preserve the sorted property.  Return value &gt;= 0
  *     iff target is found.
  * @private
  */
@@ -1023,7 +1023,7 @@ goog.array.binarySearch_ = function(arr, compareFn, isEvaluator, opt_target,
  * Sorts the specified array into ascending order.  If no opt_compareFn is
  * specified, elements are compared using
  * <code>goog.array.defaultCompare</code>, which compares the elements using
- * the built in < and > operators.  This will produce the expected behavior
+ * the built in &lt; and &gt; operators.  This will produce the expected behavior
  * for homogeneous arrays of String(s) and Number(s), unlike the native sort,
  * but will give unpredictable results for heterogenous lists of strings and
  * numbers with different numbers of digits.
@@ -1053,7 +1053,7 @@ goog.array.sort = function(arr, opt_compareFn) {
  * Sorts the specified array into ascending order in a stable way.  If no
  * opt_compareFn is specified, elements are compared using
  * <code>goog.array.defaultCompare</code>, which compares the elements using
- * the built in < and > operators.  This will produce the expected behavior
+ * the built in &lt; and &gt; operators.  This will produce the expected behavior
  * for homogeneous arrays of String(s) and Number(s).
  *
  * Runtime: Same as <code>Array.prototype.sort</code>, plus an additional
@@ -1193,7 +1193,7 @@ goog.array.compare3 = function(arr1, arr2, opt_compareFn) {
 
 
 /**
- * Compares its two arguments for order, using the built in < and >
+ * Compares its two arguments for order, using the built in &lt; and &gt;
  * operators.
  * @param {*} a The first object to be compared.
  * @param {*} b The second object to be compared.
