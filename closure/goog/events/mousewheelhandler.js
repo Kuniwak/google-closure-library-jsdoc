@@ -265,9 +265,9 @@ goog.events.MouseWheelEvent = function(detail, browserEvent, deltaX, deltaY) {
 
   /**
    * The number of lines the user scrolled
-   * @type {number}
    * NOTE: Informally deprecated. Use deltaX and deltaY instead, they provide
    * more information.
+   * @type {number}
    */
   this.detail = detail;
 
